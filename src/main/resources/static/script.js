@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         author.textContent = book.author;
 
         const status = document.createElement("div");
-        status.className = "book-status " + (book.bookRead ? "completed" : "not-completed");
-        status.textContent = "Completed: " + (book.bookRead ? "Yes" : "No");
+        status.className = "book-status " + (book.bookReadStatus.replaceAll(" ", "-").toLowerCase());
+        status.textContent = "Status: " + book.bookReadStatus;
 
         card.appendChild(title);
         card.appendChild(author);

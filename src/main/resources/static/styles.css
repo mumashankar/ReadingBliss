@@ -49,6 +49,10 @@ header {
   color: green;
 }
 
-.not-completed {
-  color: red;
+.not-started {
+  color: purple;
+}
+
+.in-progress {
+  color: coral;
 }

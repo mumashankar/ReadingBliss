@@ -4,20 +4,20 @@ public class Book {
     private int bookId;
     private String bookTitle;
     private String author;
-    private boolean isBookRead;
+    private String bookReadStatus;
 
     public Book(Builder builder) {
         this.bookId = builder.bookId;
         this.bookTitle = builder.bookTitle;
         this.author = builder.author;
-        this.isBookRead = builder.isBookRead;
+        this.bookReadStatus = builder.bookReadStatus;
     }
 
     public static class Builder {
         private int bookId;
         private String bookTitle;
         private String author;
-        private boolean isBookRead;
+        private String bookReadStatus;
 
         public Builder bookId(int bookId) {
             this.bookId = bookId;
@@ -31,8 +31,8 @@ public class Book {
             this.author = author;
             return this;
         }
-        public Builder isBookRead(boolean isBookRead) {
-            this.isBookRead = isBookRead;
+        public Builder bookReadStatus(String bookReadStatus) {
+            this.bookReadStatus = bookReadStatus;
             return this;
         }
 
@@ -65,11 +65,11 @@ public class Book {
         this.author = author;
     }
 
-    public boolean isBookRead() {
-        return isBookRead;
+    public String getBookReadStatus() {
+        return bookReadStatus;
     }
 
-    public void setBookRead(boolean bookRead) {
-        isBookRead = bookRead;
+    public void setBookReadStatus(String bookReadStatus) {
+        bookReadStatus = bookReadStatus;
     }
 }
