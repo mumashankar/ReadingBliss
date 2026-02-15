@@ -19,20 +19,21 @@ public class BookDao {
                 .bookId(resultSet.getInt(1))
                 .bookTitle(resultSet.getString(2))
                 .author(resultSet.getString(3))
-                .isBookRead(resultSet.getBoolean(4))
+                .bookReadStatus(resultSet.getString(4))
                 .build();
     }
 //    Get All books from my library
-//    SELECT b.id, b.title, b.author, l.isRead, l.comment FROM public.Book b JOIN public.MyLibrary l ON b.id = l.book_id;
+//    SELECT b.id, b.title, b.author, l.readStatus, l.comment FROM public.Book b JOIN public.MyLibrary l ON b.id = l.book_id;
 
 //    Get All books from my Wishlist
 //    SELECT b.id, b.title, b.author, l.buyFrom, l.comment FROM public.Book b JOIN public.MyWishlist l ON b.id = l.book_id;
 
     public List<Book> getAllBooks(){
-        String getAllBooksQry = "SELECT book.id, book.title, book.author, lib.isRead, lib.comment " +
+        String getAllBooksQry = "SELECT book.id, book.title, book.author, lib.readStatus, lib.comment " +
                 "FROM Book book " +
                 "JOIN MyLibrary lib " +
-                "ON book.id = lib.book_id";
+                "ON book.id = lib.book_id " +
+                "order by book.id";
         return jdbcTemplate.query(getAllBooksQry, this::book);
     }
 }
