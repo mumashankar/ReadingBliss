@@ -15,8 +15,7 @@ public class DBDetailsService {
     @Autowired
     private DBDetailsDao dbDetailsDao;
 
-    //  0 0 */12 * * * // Once in 12 hrs
-    @Scheduled(cron = "0 * * * * *")
+    @Scheduled(cron = "0 0 */12 * * *")
     public List<String> getTables(){
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss a", Locale.ENGLISH);
