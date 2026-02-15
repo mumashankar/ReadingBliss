@@ -1,4 +1,4 @@
-# 📚 Book Library Web Application
+# Reading Bliss
 
 A simple **Spring Boot** web application demonstrating **CRUD operations** with a **Postgres database hosted on Render**.  
 This project showcases backend–frontend integration, scheduled jobs, and database joins for practical book management.
